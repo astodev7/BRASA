@@ -1,0 +1,12 @@
+{
+  "name": "BRASA — Restaurante",
+  "short_name": "BRASA",
+  "description": "Restaurante contemporâneo especializado em pratos preparados na brasa.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F1E9DC",
+  "theme_color": "#211D1A",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "brasa-database",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Scripts de migration e seed do banco de dados BRASA",
+  "scripts": {
+    "migrate": "node migrations/run.js",
+    "seed": "node seed/seed.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "pg": "^8.12.0"
+  }
+}

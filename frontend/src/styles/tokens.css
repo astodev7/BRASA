@@ -1,0 +1,82 @@
+:root {
+  /* Cor — paleta editorial: carvao, creme, terracota e vinho */
+  --color-carvao: #211d1a;
+  --color-carvao-soft: #2c2622;
+  --color-creme: #f1e9dc;
+  --color-off-white: #faf6ef;
+  --color-terracota: #b5541f;
+  --color-terracota-dark: #8f4118;
+  --color-vinho: #6e2a20;
+  --color-ink: #2a211b;
+  --color-ink-soft: #5a4f45;
+  --color-line: rgba(42, 33, 27, 0.14);
+  --color-line-dark: rgba(241, 233, 220, 0.16);
+  --color-success: #4c6b3f;
+  --color-error: #a33b2b;
+
+  /* Tipografia */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Espacamento */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+
+  /* Layout */
+  --content-max: 1180px;
+  --radius-sharp: 0;
+  --radius-soft: 3px;
+  --transition-base: 180ms ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background: var(--color-creme);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-terracota);
+  outline-offset: 2px;
+}
