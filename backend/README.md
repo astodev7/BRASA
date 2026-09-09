@@ -77,11 +77,6 @@ npm run seed
 
 Isso cria categorias, pratos, uma reserva de exemplo e um usuário administrativo de **desenvolvimento**:
 
-```
-E-mail: admin@brasa.example
-Senha:  BrasaAdmin#2026
-```
-
 > Nunca utilize essa credencial em produção. Gere uma nova via hash bcrypt e insira diretamente no banco, ou crie um script de provisionamento próprio para produção.
 
 ## Executando localmente
