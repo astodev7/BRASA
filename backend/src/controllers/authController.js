@@ -7,6 +7,15 @@ const env = require('../config/env');
 
 const COOKIE_NAME = 'brasa_token';
 
+const cookieOptions = {
+  httpOnly: true,
+  secure: env.isProduction,
+  // Frontend e API ficam em projetos Vercel diferentes. Em producao,
+  // o cookie precisa poder viajar em requisicoes cross-site.
+  sameSite: env.isProduction ? 'none' : 'lax',
+  path: '/',
+};
+
 const login = asyncHandler(async (req, res) => {
   const parsed = loginSchema.safeParse(req.body);
   if (!parsed.success) {
@@ -16,9 +25,7 @@ const login = asyncHandler(async (req, res) => {
   const { token, user } = await authService.login(parsed.data.email, parsed.data.password);
 
   res.cookie(COOKIE_NAME, token, {
-    httpOnly: true,
-    secure: env.isProduction,
-    sameSite: 'lax',
+    ...cookieOptions,
     maxAge: 8 * 60 * 60 * 1000,
   });
 
@@ -26,7 +33,7 @@ const login = asyncHandler(async (req, res) => {
 });
 
 const logout = asyncHandler(async (req, res) => {
-  res.clearCookie(COOKIE_NAME);
+  res.clearCookie(COOKIE_NAME, cookieOptions);
   return success(res, { message: 'Logout realizado com sucesso.' });
 });
 
